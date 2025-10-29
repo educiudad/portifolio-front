@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev club portifolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="particulas">
+
+    </div>
+
+    <nav class=" navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">contatos</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/eduardo_cidad/" target="_blank" class="menu-link">perfil</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="img/dca05348-2071-4f47-bcbd-9aff5a996677.jpg" alt="" class="foto-perfil">
+        <h1>Eduardo Ciudad</h1>
+        <p class="cabecalho-subtitulo">desenvolvedor front-end</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">sobre</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá, sou desenvolvedor front-end, atualmente estou estudando HTML, CSS e JavaScript e tenho como
+                objetivo ser um desenvolvedor full-stack.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="img/projeto1.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">lojas de carros</h3>
+                    <p class="paragrafo-projetos">loja virtual moderna com animação suaves e design responsivo para uma
+                        loja de carros de luxo.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/projeto2.png" alt="projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">paginas de viajem</h3>
+                    <p class="paragrafo-projetos">uma pagina interativa com roteiros de viagem mais cobiçadas do mundo
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">entre em contato</h2>
+
+        <form class="formulario-contatos" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="digite sua mensagem" id="mensagem" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form"> enviar watsapp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+            console.log("funcao enviarwhats foi chamada");
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = "5517996389274"
+
+            const texto = `Olá! me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, "_blank")
+        }
+
+    </script>
+</body>
+
+</html>
